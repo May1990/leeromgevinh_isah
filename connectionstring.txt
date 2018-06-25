@@ -1,1 +1,20 @@
 "DefaultConnection": "Data Source=WIN-ISAH-WP\\ISAH_SQLEXPRESS;Initial Catalog=ISAH_Digitale_leeromgeving_DBS_versie2;Integrated Security=False; User ID=AnnaMay;Password=roastOfGiel7391;MultipleActiveResultSets=True"
+
+"profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "api/diagrams",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+"isah_leeromgeving_api_versie1": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api/courses",
+      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }

@@ -21,12 +21,6 @@ namespace isah_leeromgeving_api_versie1.Controllers
             public CoursesController(ModelContext context)
             {
                 _context = context;
-
-                /*if (_context.Courses.Count() == 0)
-                {
-                    _context.Courses.Add(new Course { Name = "Course1" });
-                    _context.SaveChanges();
-                }*/
             }
 
             [HttpGet]
@@ -34,9 +28,9 @@ namespace isah_leeromgeving_api_versie1.Controllers
             {
                 //to do module wordt niet helemaal goed opgehaald
                 return _context.Courses
-                    .Include(course => course.Slides)
-                    .Include(course => course.Coursemodules)
-                    .ThenInclude(coursemodule => coursemodule.Module)
+                    //.Include(course => course.Slides)
+                    //.Include(course => course.Coursemodules)
+                    //.ThenInclude(coursemodule => coursemodule.Module)
                     .ToList();
             }
 

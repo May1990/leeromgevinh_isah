@@ -15,7 +15,6 @@ namespace isah_leeromgeving_api_versie1.Models
         [StringLength(10)]
         public string Rectanglecode { get; set; }
 
-        [JsonIgnore]
         [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Iddiagram { get; set; }
@@ -38,6 +37,7 @@ namespace isah_leeromgeving_api_versie1.Models
         [StringLength(100)]
         public string Text { get; set; }
 
+        [JsonIgnore]
         [ForeignKey("Iddiagram")]
         public virtual Diagram Diagram { get; set; }
     }

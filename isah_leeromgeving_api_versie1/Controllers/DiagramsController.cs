@@ -9,7 +9,7 @@ using isah_leeromgeving_api_versie1.Models;
 
 namespace isah_leeromgeving_api_versie1.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/diagrams")]
     [ApiController]
     public class DiagramsController : ControllerBase
     {
@@ -25,12 +25,7 @@ namespace isah_leeromgeving_api_versie1.Controllers
         public IEnumerable<Diagram> GetDiagrams()
         {
             return _context.Diagrams
-                .Include(diagram => diagram.Rectangles)
-                .Include(diagram => diagram.Texts)
-                .Include(diagram => diagram.Paths)
-                .ThenInclude(path => path.Positions)
                 .ToList();
-            //return _context.Diagrams;
         }
 
         // GET: api/Diagrams/5
@@ -42,7 +37,12 @@ namespace isah_leeromgeving_api_versie1.Controllers
                 return BadRequest(ModelState);
             }
 
-            var diagram = await _context.Diagrams.FindAsync(id);
+            var diagram = await _context.Diagrams
+                .Include(diagramm => diagramm.Rectangles)
+                .Include(diagramm => diagramm.Texts)
+                .Include(diagramm => diagramm.Paths)
+                    .ThenInclude(path => path.Positions)
+                .FirstOrDefaultAsync(diagramm => diagramm.Id == id);
 
             if (diagram == null)
             {
