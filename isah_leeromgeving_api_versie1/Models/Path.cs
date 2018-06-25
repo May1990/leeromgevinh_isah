@@ -4,17 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Newtonsoft.Json;
 
 namespace isah_leeromgeving_api_versie1.Models
 {
     [Table("Path")]
     public class Path
     {
-        public Path()
-        {
-            Positions = new HashSet<Position>();
-        }
-
         public int Id { get; set; }
 
         [Required]
@@ -35,8 +31,11 @@ namespace isah_leeromgeving_api_versie1.Models
         [StringLength(6)]
         public string Endarrow { get; set; }
 
+        [JsonIgnore]
+        [ForeignKey("Iddiagram")]
         public virtual Diagram Diagram { get; set; }
-        
+
+        //[InverseProperty("Path")]
         public virtual ICollection<Position> Positions { get; set; }
     }
 }

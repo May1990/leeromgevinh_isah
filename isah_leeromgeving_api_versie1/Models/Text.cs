@@ -4,18 +4,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Newtonsoft.Json;
 
 namespace isah_leeromgeving_api_versie1.Models
 {
     [Table("Text")]
     public class Text
     {
-        [Key]
         [Column(Order = 0)]
         [StringLength(10)]
         public string Textcode { get; set; }
 
-        [Key]
+        [JsonIgnore]
         [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Iddiagram { get; set; }
@@ -35,6 +35,7 @@ namespace isah_leeromgeving_api_versie1.Models
         [StringLength(100)]
         public string TextOfText { get; set; }
 
+        [ForeignKey("Iddiagram")]
         public virtual Diagram Diagram { get; set; }
     }
 }

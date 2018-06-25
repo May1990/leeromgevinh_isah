@@ -10,11 +10,6 @@ namespace isah_leeromgeving_api_versie1.Models
     [Table("Company")]
     public class Company
     {
-        public Company()
-        {
-            Users = new HashSet<User>();
-        }
-
         [Key]
         [StringLength(50)]
         public string Companyname { get; set; }

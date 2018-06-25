@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,12 +11,6 @@ namespace isah_leeromgeving_api_versie1.Models
     [Table("Module")]
     public class Module
     {
-        public Module()
-        {
-            Slides = new HashSet<Slide>();
-            Courses = new HashSet<Course>();
-        }
-
         public int Id { get; set; }
 
         [Required]
@@ -28,8 +23,12 @@ namespace isah_leeromgeving_api_versie1.Models
         [StringLength(20)]
         public string Day { get; set; }
         
-        public virtual ICollection<Slide> Slides { get; set; }
-        
-        public virtual ICollection<Course> Courses { get; set; }
+        public int? Idfunction { get; set; }
+
+        [ForeignKey("Idfunction")]
+        public virtual Function Function { get; set; }
+
+        [JsonIgnore]
+        public virtual ICollection<Coursemodule> Coursemodules { get; set; }
     }
 }

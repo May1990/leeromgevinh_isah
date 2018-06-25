@@ -12,10 +12,10 @@ namespace isah_leeromgeving_api_versie1.Models
     {
         public Diagram()
         {
-            Paths = new HashSet<Path>();
-            Rectangles = new HashSet<Rectangle>();
-            Texts = new HashSet<Text>();
-            Slidediagrams = new HashSet<Slidediagram>();
+            //Paths = new HashSet<Path>();
+            //Rectangles = new HashSet<Rectangle>();
+            //Texts = new HashSet<Text>();
+            //Slidediagrams = new HashSet<Slidediagram>();
         }
 
         public int Id { get; set; }

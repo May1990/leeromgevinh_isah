@@ -21,6 +21,7 @@ namespace isah_leeromgeving_api_versie1.Models
         [StringLength(7)]
         public string Correct { get; set; }
 
+        [ForeignKey("Idquestion")]
         public virtual Question Question { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace isah_leeromgeving_api_versie1.Models
         public int Iddiagram { get; set; }
         public Diagram Diagram { get; set; }
 
-        public string Idslide { get; set; }
+        public int Idslide { get; set; }
         public Slide Slide { get; set; }
     }
 }

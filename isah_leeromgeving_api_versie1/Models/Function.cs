@@ -12,8 +12,8 @@ namespace isah_leeromgeving_api_versie1.Models
     {
         public Function()
         {
-            Functions1 = new HashSet<Function>();
-            Slides = new HashSet<Slide>();
+            //Functions1 = new HashSet<Function>();
+            //Slides = new HashSet<Slide>();
         }
 
         public int Id { get; set; }
@@ -29,6 +29,7 @@ namespace isah_leeromgeving_api_versie1.Models
         
         public virtual ICollection<Function> Functions1 { get; set; }
 
+        [ForeignKey("Idfunction")]
         public virtual Function Function1 { get; set; }
         
         public virtual ICollection<Slide> Slides { get; set; }

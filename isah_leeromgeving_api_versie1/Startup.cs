@@ -33,7 +33,7 @@ namespace isah_leeromgeving_api_versie1
                 .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
                 .AddJsonFile("appsettings.json")
                 .Build();*/
-            services.AddDbContext<CourseContext>(options =>
+            services.AddDbContext<ModelContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc()
                     .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

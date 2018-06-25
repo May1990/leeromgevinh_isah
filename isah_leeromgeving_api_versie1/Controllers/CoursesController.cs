@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using isah_leeromgeving_api_versie1.Models;
+using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,28 +16,28 @@ namespace isah_leeromgeving_api_versie1.Controllers
     [ApiController]
     public class CoursesController : Controller
     {
-
-        /*[Route("api/courses")]
-        
-        public class TodoController : ControllerBase
-        {*/
             private readonly ModelContext _context;
 
             public CoursesController(ModelContext context)
             {
                 _context = context;
 
-                if (_context.Courses.Count() == 0)
+                /*if (_context.Courses.Count() == 0)
                 {
                     _context.Courses.Add(new Course { Name = "Course1" });
                     _context.SaveChanges();
-                }
+                }*/
             }
 
             [HttpGet]
             public ActionResult<List<Course>> GetAll()
             {
-                return _context.Courses.ToList();
+                //to do module wordt niet helemaal goed opgehaald
+                return _context.Courses
+                    .Include(course => course.Slides)
+                    .Include(course => course.Coursemodules)
+                    .ThenInclude(coursemodule => coursemodule.Module)
+                    .ToList();
             }
 
             [HttpPost]

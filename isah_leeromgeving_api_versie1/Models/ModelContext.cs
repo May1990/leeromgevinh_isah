@@ -29,10 +29,27 @@ namespace isah_leeromgeving_api_versie1.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Rectangle>().HasKey(rectangle => new { rectangle.Iddiagram, rectangle.Rectanglecode });
-            modelBuilder.Entity<Text>().HasKey(text => new { text.Iddiagram, text.Textcode });
+            //set foreignkeys
+            /*modelBuilder.Entity<Path>()
+                .HasOne(path => path.Diagram)
+                .WithMany(diagram => diagram.Paths)
+                .HasForeignKey(path => path.Iddiagram);*/
 
-            modelBuilder.Entity<Slidediagram>().HasKey(slidediagram => new { slidediagram.Iddiagram, slidediagram.Idslide });
+            //modelBuilder.Entity<Position>()
+             //.Ignore(p => p.Idpath);
+
+            //set primarykeys
+            //rectangle connections
+            modelBuilder.Entity<Rectangle>()
+                .HasKey(rectangle => new { rectangle.Iddiagram, rectangle.Rectanglecode });
+
+            //text connections
+            modelBuilder.Entity<Text>()
+                .HasKey(text => new { text.Iddiagram, text.Textcode });
+
+            //
+            modelBuilder.Entity<Slidediagram>()
+                .HasKey(slidediagram => new { slidediagram.Iddiagram, slidediagram.Idslide });
 
             modelBuilder.Entity<Slidediagram>()
                 .HasOne(sd => sd.Slide)
@@ -43,6 +60,20 @@ namespace isah_leeromgeving_api_versie1.Models
                 .HasOne(sd => sd.Diagram)
                 .WithMany(d => d.Slidediagrams)
                 .HasForeignKey(sd => sd.Iddiagram);
+
+            modelBuilder.Entity<Coursemodule>().HasKey(coursemodule => new { coursemodule.Idcourse, coursemodule.Idmodule });
+
+            /*
+            modelBuilder.Entity<Coursemodule>()
+                .HasOne(cm => cm.Course)
+                .WithMany(c => c.Coursemodules)
+                .HasForeignKey(cm => cm.Idcourse);
+
+            modelBuilder.Entity<Coursemodule>()
+                 .HasOne(cm => cm.Module)
+                 .WithMany(m => m.Coursemodules)
+                 .HasForeignKey(cm => cm.Idmodule);*/
+
             /*
             modelBuilder.Entity<Company>()
                .HasMany(e => e.Users)

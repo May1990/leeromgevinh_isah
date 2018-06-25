@@ -12,7 +12,6 @@ C:\Users\Anna-May\source\repos\isah_leeromgeving_api_versie1\isah_leeromgeving_a
 C:\Users\Anna-May\source\repos\isah_leeromgeving_api_versie1\isah_leeromgeving_api_versie1\obj\Debug\netcoreapp2.1\isah_leeromgeving_api_versie1.RazorTargetAssemblyInfo.cache
 C:\Users\Anna-May\source\repos\isah_leeromgeving_api_versie1\isah_leeromgeving_api_versie1\obj\Debug\netcoreapp2.1\isah_leeromgeving_api_versie1.dll
 C:\Users\Anna-May\source\repos\isah_leeromgeving_api_versie1\isah_leeromgeving_api_versie1\obj\Debug\netcoreapp2.1\isah_leeromgeving_api_versie1.pdb
-C:\Users\Anna-May\Documents\GitHub\leeromgevinh_isah\isah_leeromgeving_api_versie1\obj\Debug\netcoreapp2.1\isah_leeromgeving_api_versie1.csprojAssemblyReference.cache
 C:\Users\Anna-May\Documents\GitHub\leeromgevinh_isah\isah_leeromgeving_api_versie1\obj\Debug\netcoreapp2.1\isah_leeromgeving_api_versie1.csproj.CoreCompileInputs.cache
 C:\Users\Anna-May\Documents\GitHub\leeromgevinh_isah\isah_leeromgeving_api_versie1\obj\Debug\netcoreapp2.1\isah_leeromgeving_api_versie1.AssemblyInfoInputs.cache
 C:\Users\Anna-May\Documents\GitHub\leeromgevinh_isah\isah_leeromgeving_api_versie1\obj\Debug\netcoreapp2.1\isah_leeromgeving_api_versie1.AssemblyInfo.cs

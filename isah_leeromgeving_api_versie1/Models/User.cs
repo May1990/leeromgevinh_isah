@@ -29,10 +29,7 @@ namespace isah_leeromgeving_api_versie1.Models
         [StringLength(50)]
         public string Companyname { get; set; }
 
+        [ForeignKey("Companyname")]
         public virtual Company Company { get; set; }
-
-        /*public virtual Company Company1 { get; set; }
-
-        public virtual Company Company2 { get; set; }*/
     }
 }

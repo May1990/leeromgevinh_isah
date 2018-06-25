@@ -10,11 +10,6 @@ namespace isah_leeromgeving_api_versie1.Models
     [Table("Course")]
     public class Course
     {
-        public Course()
-        {
-            Modules = new HashSet<Module>();
-            Slides = new HashSet<Slide>();
-        }
         public int Id {get; set;}
 
         [Required]
@@ -27,7 +22,7 @@ namespace isah_leeromgeving_api_versie1.Models
         [Column(TypeName = "numeric")]
         public decimal? Days { get; set; }
 
-        public virtual ICollection<Module> Modules { get; set; }
+        public virtual ICollection<Coursemodule> Coursemodules { get; set; }
 
         public virtual ICollection<Slide> Slides { get; set; }
     }
