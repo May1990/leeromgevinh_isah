@@ -127,7 +127,36 @@ width: 100%;
 /*#endregion menubannerelements */
 
 /*#region mainelements */
-main {
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.tab input {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+.tab input:hover {
+    background-color: #ddd;
+}
+
+.tab input.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    white-space: pre-wrap;
 }
 /*#endregion mainelements */
 

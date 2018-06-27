@@ -2,8 +2,10 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Diagram maken</title>
+    <title>Slide</title>
+    <link rel="stylesheet" href="styles/filldynamic_styles.css">
     <link rel="stylesheet" href="styles/main_styles.css">
+
 </head>
 <body>
     <div id="container">
@@ -27,19 +29,21 @@
             </div>
             <div id="banner">
                 <img id="img_banner" src="images/koffie_banner.jpg" alt="koffie">
+                <h1 id="pagetitle">Online cursussen</h1>
             </div>
         </div>
 
         <div class="row">
-            <main class="centerlmnt">
-                <h1>Diagram maken</h1>
-            </main>
+            <section id="video" class="centerlmnt"></section>
         </div>
 
         <div class="row">
             <footer class="centerlmnt"><p>&copy; 2018 Isah Business Software</p></footer>
         </div>
     </div>
-
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="javasript/builder/SlidesViewBuilder.js"></script>
+    <script src="javasript/receiver/SlidesViewReceiver.js"></script>
+    <script src="javasript/slide.js"></script>
 </body>
 </html>

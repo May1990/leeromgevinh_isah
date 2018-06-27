@@ -1,0 +1,6 @@
+﻿let CoursesViewSender = (function () {
+    return {
+        
+    }
+
+})();
