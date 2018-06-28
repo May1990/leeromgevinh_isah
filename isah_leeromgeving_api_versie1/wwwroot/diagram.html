@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Home</title>
+    <link rel="stylesheet" href="styles/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/diagram_styles.css">
+</head>
+<body>
+    <div id="container">
+        <div class="row">
+            <header class="centerlmnt">
+                <img id="img_logo" src="images/ISAH_logo.png" alt="Isah logo">
+                <div id="login">
+                    <a class="navitem" href="/html/">Inloggen</a>
+                </div>
+            </header>
+        </div>
+
+        <div class="row">
+            <div class="centerlmnt">
+                <nav>
+                    <a class="navitem" href="index.html">Home</a> |
+                    <a class="navitem" href="alldiagrams.html">Diagrammen</a> |
+                    <a class="navitem" href="onlinecourses.html">Online cursussen</a> |
+                    <a class="navitem" href="https://isah.com/klantondersteuning/trainingen/">Offline cursussen</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row">
+            <main class="centerlmnt">
+                <h1>Diagram</h1>
+                <div id="diagram">
+                    <input class="drawlmnt" type="image" id="btnrectangle" src="images/drawrectangle.png" data-drawlmnt="rect"></input>
+                    <input class="drawlmnt" type="image" id="btnline" src="images/drawline.png" data-drawlmnt="line"></input>
+                    <input class="drawlmnt" type="image" id="btntext" src="images/typetext.png" data-drawlmnt="text"></input>
+                </div>
+                <div id="diagramvariable">
+                    <section id="shapevariables">
+                        <section class="rect hidden">
+                            <label>
+                                Tekst
+                            </label>
+                            <textarea id="rectext"></textarea>
+                        </section>
+                        <section class="text hidden">
+                            <label>
+                                Tekst
+                            </label>
+                            <textarea id="texttxt"></textarea>
+                        </section>
+                        <section class="rect hidden">
+                            <label for="recfill">
+                                Vulling kleur
+                            </label>
+                            <div id="recfill" class="colorrange">
+                            </div>
+                        </section>
+                        <section class="text rect hidden">
+                            <label for="recx">
+                                X
+                                <span id="recx-value">...</span>
+                            </label>
+                            </br>
+                            <input id="recx" type="range" min="1" max="280">
+                            </br>
+                            <label for="recy">
+                                Y
+                                <span id="recy-value">...</span>
+                            </label>
+                            </br>
+                            <input id="recy" type="range" min="1" max="280">
+                        </section>
+                        <section class="text rect hidden">
+                            <label for="recwidth">
+                                Breedte
+                                <span id="recwidth-value">...</span>
+                            </label>
+                            </br>
+                            <input id="recwidth" type="range" min="1" max="280">
+                            </br>
+                            <label for="recheight">
+                                Hoogte
+                                <span id="recheight-value">...</span>
+                            </label>
+                            </br>
+                            <input id="recheight" type="range" min="1" max="280">
+                        </section>
+                        <section class="line hidden">
+                            <label>
+                                <b>Pijltypen</b>
+                            </label>
+                            <section>
+                                <label id="A">
+                                    A
+                                </label>
+                                <div id="radioArrTypes">
+                                    <input type="radio" name="arrwtyps" value="no_A_and_B" checked="true">
+                                    <input type="image" name="arrwtyps" value="no_A_and_B" src="images/arrowtypes/line_no_A_and_B.png" width="30px">
+
+                                    <input type="radio" name="arrwtyps" value="A_and_B">
+                                    <input type="image" name="arrwtyps" value="A_and_B" src="images/arrowtypes/line_A_and_B.png" width="30px">
+
+                                    <input type="radio" name="arrwtyps" value="A_to_B">
+                                    <input type="image" name="arrwtyps" value="A_to_B" src="images/arrowtypes/line_A_to_B.png" width="30px">
+
+                                    <input type="radio" name="arrwtyps" value="B_to_A">
+                                    <input type="image" name="arrwtyps" value="B_to_A" src="images/arrowtypes/line_B_to_A.png" width="30px">
+
+                                    <input type="radio" name="arrwtyps_freeAB" value="no_A_and_B" checked="true">
+                                    <input type="image" name="arrwtyps_freeAB" value="no_A_and_B" src="images/arrowtypes/line_free_no_A_and_B.png" width="30px">
+
+                                    <input type="radio" name="arrwtyps_freeAB" value="A_and_B">
+                                    <input type="image" name="arrwtyps_freeAB" value="A_and_B" src="images/arrowtypes/line_free_A_and_B.png" width="30px">
+
+                                    <input type="radio" name="arrwtyps_freeAB" value="A_to_B">
+                                    <input type="image" name="arrwtyps_freeAB" value="A_to_B" src="images/arrowtypes/line_free_A_to_B.png" width="30px">
+
+                                    <input type="radio" name="arrwtyps_freeAB" value="B_to_A">
+                                    <input type="image" name="arrwtyps_freeAB" value="B_to_A" src="images/arrowtypes/line_free_B_to_A.png" width="30px">
+
+                                    <input type="radio" name="arrwtyps_freeA" value="no_A_and_B" checked="true">
+                                    <input type="image" name="arrwtyps_freeA" value="no_A_and_B" src="images/arrowtypes/line_no_freeA_and_B.png" width="30px">
+
+                                    <input type="radio" name="arrwtyps_freeA" value="A_and_B">
+                                    <input type="image" name="arrwtyps_freeA" value="A_and_B" src="images/arrowtypes/line_freeA_and_B.png" width="30px">
+
+                                    <input type="radio" name="arrwtyps_freeA" value="A_to_B">
+                                    <input type="image" name="arrwtyps_freeA" value="A_to_B" src="images/arrowtypes/line_freeA_to_B.png" width="30px">
+
+                                    <input type="radio" name="arrwtyps_freeA" value="B_to_A">
+                                    <input type="image" name="arrwtyps_freeA" value="B_to_A" src="images/arrowtypes/line_B_to_freeA.png" width="30px">
+
+                                    <input type="radio" name="arrwtyps_freeB" value="no_A_to_B" checked="true">
+                                    <input type="image" name="arrwtyps_freeB" value="no_A_to_B" src="images/arrowtypes/line_no_A_and_freeB.png" width="30px">
+
+                                    <input type="radio" name="arrwtyps_freeB" value="A_and_B">
+                                    <input type="image" name="arrwtyps_freeB" value="A_and_B" src="images/arrowtypes/line_A_and_freeB.png" width="30px">
+
+                                    <input type="radio" name="arrwtyps_freeB" value="A_to_B">
+                                    <input type="image" name="arrwtyps_freeB" value="A_to_B" src="images/arrowtypes/line_A_to_freeB.png" width="30px">
+
+                                    <input type="radio" name="arrwtyps_freeB" value="B_to_A">
+                                    <input type="image" name="arrwtyps_freeB" value="B_to_A" src="images/arrowtypes/line_freeB_to_A.png" width="30px">
+                                </div>
+                                <label id="B">
+                                    B
+                                </label>
+                            </section>
+                        </section>
+                        <section class="line hidden">
+                            Stippellijn
+                            <input id="dashedline" type="checkbox" name="stroke">
+                        </section>
+                        <section class="text hidden">
+                            Rand
+                            <input id="textstroke" type="checkbox" name="stroke">
+                        </section>
+                        <section class="line hidden">
+                            <input type="button" id="pointadd" value="Toevoegen punt">
+                        </section>
+                        <section class="text rect line hidden">
+                            <input type="button" id="shaperemove" data-rect="Verwijder rechthoek" data-line="Verwijder lijn" data-text="Verwijder tekstelement">
+                        </section>
+                    </section>
+                </div>
+            </main>
+        </div>
+
+        <div class="row">
+            <footer class="centerlmnt"><p>&copy; 2018 Isah Business Software</p></footer>
+        </div>
+    </div>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="javasript/diagram.js"></script>
+    <script src="javasript/builder/DiagramViewBuilder.js"></script>
+    <script src="javasript/drawingdiagram.js"></script>
+    <script src="javasript/receiver/DiagramsViewReceiver.js"></script>
+    <script src="javasript/startdiagram.js"></script>
+</body>
+</html>

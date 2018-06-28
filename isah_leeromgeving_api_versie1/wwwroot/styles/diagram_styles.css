@@ -1,2 +1,114 @@
-﻿body {
+﻿#shapevariables {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(180, 180, 180, 0.8);
+    width: 856px;
+    height: 140px;
+}
+
+#shapevariables > section {
+    width: 200px;
+    border-width: 1px;
+    border-style: solid;
+    margin: 3px;
+    padding: 3px;
+}
+
+#diagram {
+    width: 900px;
+}
+
+    #diagram input {
+        height: 30px;
+        width: 30px;
+    }
+
+.colorrange {
+    margin: 3px;
+}
+
+.colorrange > button {
+    margin: 2px;
+}
+
+.colorrange > button:hover {
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+}
+
+#shaperemove, #pointremove {
+    width: 100%;
+}
+
+#shapevariables > section > textarea {
+    width: 194px;
+    height: 33px;
+    resize: none;
+}
+
+#radioArrTypes {
+    height: 54px;
+    width: 50%;
+    display: inline-block;
+    margin: 16px;
+}
+
+#radioArrTypes > input:focus {
+    outline: none;
+}
+
+#radioArrTypes > input {
+    margin: 0px;
+}
+
+#A, #B {
+    height: 54px;
+    font-size: 18pt;
+    margin: 0px 7px;
+}
+
+svg {
+    outline-style: solid;
+    outline-width: 1px;
+}
+
+g.selected > rect {
+    stroke-opacity: 1;
+    opacity: 1;
+}
+
+g.active > rect {
+    stroke: red;
+}
+
+g.selected > foreignObject {
+    background-color: rgba(180, 180, 180, 0.09);
+}
+
+rect {
+    stroke: black;
+    stroke-opacity: 0.3;
+    opacity: 0.5;
+}
+
+input[type="image"] {
+    margin: 3px;
+}
+
+input[type="image"].selectfunct {
+    outline: 3px solid black;
+    outline-offset: 2px;
+}
+
+input:disabled, textarea:disabled {
+    opacity: 0.3;
+}
+
+.hidden {
+    display: none;
 }
