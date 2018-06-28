@@ -107,7 +107,10 @@
                 .property("type", "button")
                 .property("value", "Volg cursus")
                 .on("click", function (d) {
+                    console.log(d);
                     localStorage.setItem("idcourse", JSON.stringify(d.id));
+                    localStorage.setItem("namecourse", JSON.stringify(d.name));
+                    localStorage.setItem("indexslide", JSON.stringify(1));
                     window.location.href = "slide.html";
                 }); 
         }

@@ -1,7 +1,7 @@
 ﻿let SlideViewReceiver = (function (slideViewBuilder) {
     let url = "api/courses/";
     
-    function getSlide(idcourse, idslide) {
+    function getSlide() {
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (xhttp.readyState == 4 && xhttp.status == 200) {
@@ -13,7 +13,21 @@
         xhttp.send();
     }
 
+    function getLastIndex() {
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                slideViewBuilder.setLastIndex(Number(xhttp.responseText));
+                getSlide();
+            }
+        }
+
+        xhttp.open("GET", url + "GetLastIndex"+ "/"+ slideViewBuilder.idcourse, true);
+        xhttp.send();
+    }
+
     return {
-        getSlide: getSlide
+        getSlide: getSlide,
+        getLastIndex: getLastIndex
     }
 })(SlideViewBuilder);

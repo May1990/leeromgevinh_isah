@@ -76,9 +76,11 @@ namespace isah_leeromgeving_api_versie1.Controllers
 
             var slide = await _context.Slides
                 .Where(slidee => slidee.Idcourse == idcourse)
+                .Where(slidee => slidee.Index == index)
                 .Include(slidee => slidee.Questions)
                     .ThenInclude(question => question.Choices)
-                .FirstOrDefaultAsync(slidee => slidee.Index == index);
+                .Include(slidee => slidee.Function)
+                .FirstOrDefaultAsync<Slide>();
 
             if (slide == null)
             {
@@ -86,6 +88,26 @@ namespace isah_leeromgeving_api_versie1.Controllers
             }
 
             return Ok(slide);
+        }
+
+        [HttpGet("GetLastIndex/{idcourse}", Name = "GetLastIndex")]
+        public async Task<IActionResult> GetLastIndex([FromRoute]int idcourse)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var lastIndex = await _context.Slides
+                .Where(slidee => slidee.Idcourse == idcourse)
+                .MaxAsync(slidee => slidee.Index);
+
+            if (lastIndex == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(lastIndex);
         }
     }
 }

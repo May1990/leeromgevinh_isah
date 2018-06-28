@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Newtonsoft.Json;
 
 namespace isah_leeromgeving_api_versie1.Models
 {
@@ -21,6 +22,7 @@ namespace isah_leeromgeving_api_versie1.Models
         [StringLength(7)]
         public string Correct { get; set; }
 
+        [JsonIgnore]
         [ForeignKey("Idquestion")]
         public virtual Question Question { get; set; }
     }

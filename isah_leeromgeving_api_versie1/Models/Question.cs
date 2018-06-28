@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Newtonsoft.Json;
 
 namespace isah_leeromgeving_api_versie1.Models
 {
@@ -22,6 +23,7 @@ namespace isah_leeromgeving_api_versie1.Models
 
         public int Idslide { get; set; }
 
+        [JsonIgnore]
         [ForeignKey("Idslide")]
         public virtual Slide Slide { get; set; }
 

@@ -1,3 +1,3 @@
 ﻿(function (viewReceiver) {
-    viewReceiver.getSlide();
+    viewReceiver.getLastIndex();
 })(SlideViewReceiver);

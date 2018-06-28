@@ -7,21 +7,20 @@ h1, h2{
     color: rgba(0, 120, 190, 1);
 }
 
-h2{
+h1 {
+    font-size: 21pt;
+}
+
+h2 {
     font-size: 14pt;
 }
 
 /*#region container elements */
 #container {
-    /*min-width: 960px;
-	max-width: 1100px;
-	margin: 0 auto 30px auto;*/
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, auto);
-    /*grid-template-columns: minmax(960px, 1100px);
-	grid-column-gap: auto;*/
 }
 
 #container .row {

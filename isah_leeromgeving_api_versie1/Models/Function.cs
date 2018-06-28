@@ -4,18 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Newtonsoft.Json;
 
 namespace isah_leeromgeving_api_versie1.Models
 {
     [Table("Function")]
     public class Function
     {
-        public Function()
-        {
-            //Functions1 = new HashSet<Function>();
-            //Slides = new HashSet<Slide>();
-        }
-
         public int Id { get; set; }
 
         [Required]
@@ -31,7 +26,8 @@ namespace isah_leeromgeving_api_versie1.Models
 
         [ForeignKey("Idfunction")]
         public virtual Function Function1 { get; set; }
-        
+
+        [JsonIgnore]
         public virtual ICollection<Slide> Slides { get; set; }
     }
 }
